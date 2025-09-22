@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
-const usuarioRoutes = require('./backend/routes/usuarioRoutes');
+//Original: const usuarioRoutes = require('./backend/routes/usuarioRoutes');
+const usuarioRoutes = require('./routes/usuarioRoutes');
 
 app.use(express.json());
 app.use(usuarioRoutes);
