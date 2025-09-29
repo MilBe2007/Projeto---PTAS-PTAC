@@ -1,12 +1,16 @@
-const express = require('express');
+require("dotenv").config();
+const express = require("express");
+const usuarioRoutes = require("./routes/usuarioRoutes");
+
 const app = express();
-//Original: const usuarioRoutes = require('./backend/routes/usuarioRoutes');
-const usuarioRoutes = require('./routes/usuarioRoutes');
-
 app.use(express.json());
-app.use(usuarioRoutes);
 
-const PORT = 3000;
-app.listen(PORT, () => {
+// Registrar rotas
+app.use("/auth", usuarioRoutes);
+
+const PORT = process.env.PORT || 3000;
+const server = app.listen(PORT, () => {
   console.log(`Servidor rodando na porta ${PORT}`);
 });
+
+module.exports = server;
