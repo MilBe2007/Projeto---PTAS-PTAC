@@ -23,7 +23,8 @@ async function authMiddleware(req, res, next) {
       return res.status(401).json({ erro: true, mensagem: "Usuário inválido" });
     }
 
-    req.usuario = usuario;
+    req.usuario = usuario;   // usuário completo
+    req.userId = usuario.id; // <-- AQUI ESTAVA FALTANDO!!!
 
     next();
   } catch (error) {

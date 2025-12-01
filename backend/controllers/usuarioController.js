@@ -27,8 +27,7 @@ class UsuarioController {
         data: {
           nome,
           email,
-          password: hash,
-          role: "CLIENTE"
+          password: hash
         }
       });
 

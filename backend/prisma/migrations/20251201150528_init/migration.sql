@@ -2,6 +2,5 @@ CREATE TABLE "Usuario" (
     "id" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
     "nome" TEXT NOT NULL,
     "email" TEXT NOT NULL,
-    "password" TEXT NOT NULL,
-    "role" TEXT NOT NULL DEFAULT 'CLIENTE'
+    "password" TEXT NOT NULL
 );
