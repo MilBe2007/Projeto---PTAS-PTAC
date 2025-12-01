@@ -1,1 +1,26 @@
-n
+-instalar dependências
+npm install
+
+-gerar client do prisma
+npx prisma generate
+
+-instalar bcryptjs
+npm install bcryptjs
+
+-iniciar servidor
+npm start
+
+-express
+npm uninstall express
+npm install express@4
+
+-ex. de token
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwiaWF0IjoxNzY0NTk5MDQ5LCJleHAiOjE3NjQ2MDI2NDl9._B5neHuvbAzQKw712rPAdp0Z85tz97pvZTNOZ4IZqiU
+
+-token do administrador
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywiaWF0IjoxNzY0NTk5NzQ5LCJleHAiOjE3NjQ2MDMzNDl9.2qTNxHzrCDqoxLPJWLzn1zUr409slwTqY7J_vionaYM
+
+-Headers
+Authorization: Bearer SEU_TOKEN_AQUI
+Content-Type: application/json
+

@@ -1,12 +1,18 @@
 require("dotenv").config();
 const express = require("express");
+
 const usuarioRoutes = require("./routes/usuarioRoutes");
+const perfilRoutes = require("./routes/perfilRoutes");
+const mesaRoutes = require("./routes/mesaRoutes");
+const reservaRoutes = require("./routes/reservaRoutes");
 
 const app = express();
 app.use(express.json());
 
-// Registrar rotas
 app.use("/auth", usuarioRoutes);
+app.use("/perfil", perfilRoutes);
+app.use("/mesas", mesaRoutes);
+app.use("/reservas", reservaRoutes);
 
 const PORT = process.env.PORT || 3000;
 const server = app.listen(PORT, () => {
