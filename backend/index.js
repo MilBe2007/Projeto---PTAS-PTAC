@@ -14,7 +14,7 @@ app.use("/perfil", perfilRoutes);
 app.use("/mesas", mesaRoutes);
 app.use("/reservas", reservaRoutes);
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3001;
 const server = app.listen(PORT, () => {
   console.log(`Servidor rodando na porta ${PORT}`);
 });
