@@ -7,12 +7,10 @@ class MesaController {
       const { codigo, n_lugares } = req.body;
       if (!codigo || !n_lugares) return res.status(400).json({ erro: true, mensagem: "Dados ausentes" });
 
-      const numero = parseInt(codigo, 10) || Math.floor(Date.now() / 1000);
-
       await prisma.mesa.create({
         data: {
-          numero,
-          lugares: Number(n_lugares)
+          codigo,
+          n_lugares: Number(n_lugares)
         }
       });
 
@@ -27,8 +25,8 @@ class MesaController {
       const mesas = await prisma.mesa.findMany({
         select: {
           id: true,
-          numero: true,
-          lugares: true
+          codigo: true,
+          n_lugares: true
         }
       });
       return res.json({ erro: false, mensagem: "OK", mesas });
@@ -58,8 +56,8 @@ class MesaController {
 
       const resultado = mesas.map(m => ({
         id: m.id,
-        codigo: m.numero,
-        n_lugares: m.lugares,
+        codigo: m.codigo,
+        n_lugares: m.n_lugares,
         reservas: m.reservas
       }));
 
